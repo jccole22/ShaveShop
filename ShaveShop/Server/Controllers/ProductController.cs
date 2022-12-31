@@ -36,7 +36,8 @@ namespace ShaveShop.Server.Controllers
         };
 
         [HttpGet]
-        public async Task<IActionResult> GetProduct()
+        //return was Task<IActionResult> but needed to change to specific action result so api would know about product schema
+        public async Task<ActionResult<List<Product>>> GetProduct()
         {
             return Ok(Products);
         }
