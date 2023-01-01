@@ -42,11 +42,11 @@ namespace ShaveShop.Server.Controllers
             return Ok(Products);
         }
 
-        [HttpGet]
-        [Route("/api/string")]
-        public async Task<IActionResult> GetString()
-        {
-            return Ok("Hello");
-        }
+        //[HttpGet]
+        //[Route("/api/string")]
+        //public async Task<IActionResult> GetString()
+        //{
+        //    return Ok("Hello");
+        //}
     }
 }
