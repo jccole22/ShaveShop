@@ -20,10 +20,15 @@ namespace ShaveShop.Server.Controllers
 
         [HttpGet]
         //return was Task<IActionResult> but needed to change to specific action result so api would know about product schema
-        public async Task<ActionResult<List<Product>>> GetProduct()
+        //wrapped list in service response
+        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProduct()
         {
             var products = await _context.Products.ToListAsync();
-            return Ok(products);
+            var response = new ServiceResponse<List<Product>>() {
+                Data = products
+            };
+            //used to just return products directly
+            return Ok(response);
         }
 
         //[HttpGet]
@@ -32,12 +37,5 @@ namespace ShaveShop.Server.Controllers
         //{
         //    return Ok("Hello");
         //}
-
-        [HttpGet]
-        [Route("/testcall")]
-        public async Task<IActionResult> GetTestCall()
-        {
-            return Ok("<h1>Tester tester</h1>");
-        }
     }
 }
