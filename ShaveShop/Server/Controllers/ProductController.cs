@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Html;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShaveShop.Server.Data;
 
@@ -15,7 +16,7 @@ namespace ShaveShop.Server.Controllers
             _context = context;
         }
 
-            
+
 
         [HttpGet]
         //return was Task<IActionResult> but needed to change to specific action result so api would know about product schema
@@ -31,5 +32,12 @@ namespace ShaveShop.Server.Controllers
         //{
         //    return Ok("Hello");
         //}
+
+        [HttpGet]
+        [Route("/testcall")]
+        public async Task<IActionResult> GetTestCall()
+        {
+            return Ok("<h1>Tester tester</h1>");
+        }
     }
 }

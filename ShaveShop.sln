@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaveShop.Server", "ShaveShop\Server\ShaveShop.Server.csproj", "{4A6220DF-182F-46E3-91F6-AF1EB4EF2A79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShaveShop.Server", "ShaveShop\Server\ShaveShop.Server.csproj", "{4A6220DF-182F-46E3-91F6-AF1EB4EF2A79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaveShop.Client", "ShaveShop\Client\ShaveShop.Client.csproj", "{436F6414-FC60-4121-9ADB-61788D1759B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShaveShop.Client", "ShaveShop\Client\ShaveShop.Client.csproj", "{436F6414-FC60-4121-9ADB-61788D1759B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaveShop.Shared", "ShaveShop\Shared\ShaveShop.Shared.csproj", "{1E0CB782-B7D6-44F3-9B68-ACF6169706A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShaveShop.Shared", "ShaveShop\Shared\ShaveShop.Shared.csproj", "{1E0CB782-B7D6-44F3-9B68-ACF6169706A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
