@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShaveShop.Server.Data;
+using ShaveShop.Server.Services.ProductService;
 
 namespace ShaveShop.Server.Controllers
 {
@@ -9,26 +10,21 @@ namespace ShaveShop.Server.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly DataContext _context;
+        private readonly IProductService _productService;
 
-        public ProductController(DataContext context)
+        public ProductController(IProductService productService)
         {
-            _context = context;
+            _productService = productService;
         }
 
 
 
         [HttpGet]
-        //return was Task<IActionResult> but needed to change to specific action result so api would know about product schema
-        //wrapped list in service response
-        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProduct()
+        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProducts()
         {
-            var products = await _context.Products.ToListAsync();
-            var response = new ServiceResponse<List<Product>>() {
-                Data = products
-            };
-            //used to just return products directly
-            return Ok(response);
+            //moved all logic inside the ProductService class
+            var result = await _productService.GetProductstAsync();
+            return Ok(result);
         }
 
         //[HttpGet]
