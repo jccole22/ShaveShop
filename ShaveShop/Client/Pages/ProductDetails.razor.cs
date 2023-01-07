@@ -10,12 +10,23 @@ namespace ShaveShop.Client.Pages
         protected IProductService ProductService { get; set; }
 
         protected Product? product = null;
+        protected string message = string.Empty;
         [Parameter]
         public int Id { get; set; }
 
         protected override async Task OnParametersSetAsync()
         {
-            product = ProductService.Products.Find(p => p.Id == Id);
+            message = "Loading product...";
+
+            var response = await ProductService.GetProduct(Id);
+            if (!response.Success)
+            {
+                message = response.Message;
+            }
+            else
+            {
+                product = response.Data;
+            }
         }
     }
 }
