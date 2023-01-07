@@ -23,7 +23,14 @@ namespace ShaveShop.Server.Controllers
         public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProducts()
         {
             //moved all logic inside the ProductService class
-            var result = await _productService.GetProductstAsync();
+            var result = await _productService.GetProductsAsync();
+            return Ok(result);
+        }
+
+        [HttpGet("{productId}")]
+        public async Task<ActionResult<ServiceResponse<Product>>> GetProduct(int productId)
+        {
+            var result = await _productService.GetProductAsync(productId);
             return Ok(result);
         }
 
