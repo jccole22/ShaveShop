@@ -1,0 +1,5 @@
+Products -> Department -> Category -> Product
+
+
+
+1. Maybe do category -> subcategory 
