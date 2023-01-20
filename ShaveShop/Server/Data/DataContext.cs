@@ -69,7 +69,7 @@ namespace ShaveShop.Server.Data
                     new Product
                     {
                         Id = 4,
-                        Title = "Dovo 5/8 \" Faux Tortoise Handle",
+                        Title = "Dovo 5/8\" Faux Tortoise Handle",
                         Description = "The Faux Tortoise Straight Razor is handcrafted and offers over 100 years of craftsmanship expertise. The high quality carbon steel blade delivers a clean, close cut. While the faux tortoise handle offers one of a kind comfort. This is an excellent blade for beginners.",
                         ImageUrl = "https://www.shavershop.com/shop/images/th2_4240_razor_515_lg.jpg",
                         Price = 175.00m,
@@ -78,7 +78,7 @@ namespace ShaveShop.Server.Data
                     new Product
                     {
                         Id = 5,
-                        Title = "Dovo 5/8 \" Redwood Handle",
+                        Title = "Dovo 5/8\" Redwood Handle",
                         Description = "The Redwood Straight Razor is handcrafted and offers over 100 years of craftsmanship expertise. The high quality carbon steel blade delivers a clean, close cut. While the redwood handle offers a one of a kind luxury scale. This is an excellent blade for beginners and experts alike.",
                         ImageUrl = "https://www.shavershop.com/shop/images/th2_4284_dovo_831_lg.jpg",
                         Price = 267.00m,
@@ -119,6 +119,114 @@ namespace ShaveShop.Server.Data
                         ImageUrl = "https://www.shavershop.com/shop/images/th2_4239_merkur-510-001_lg.jpg",
                         Price = 97.00m,
                         CategoryId = 1
+                    },
+                    new Product
+                    {
+                        Id = 10,
+                        Title = "C. Conk Pure Badger Shave Brush",
+                        Description = "This is a fantastic starter brush has you get introduced to wet shaving, lathering, and the wonderful properties of badger hair. Badger has long been the choice for wet shavers because of its water retention, backbone, and face feel. It whips up phenomenal lathers. While it comes in numerous-grades\", badger hair called-pure\" is a great option for the beginner as it won't break the bank, like the more expensive-silvertips\". A 24mm knot makes this a medium (trending to large) brush that creates ample lather. The densely-packed knot is set deep in the handle for durability and comfort.",
+                        ImageUrl = "https://www.shavershop.com/shop/images/th2_4300.jpg",
+                        Price = 30.00m,
+                        CategoryId = 2
+                    },
+                    new Product
+                    {
+                        Id = 11,
+                        Title = "Parker Faux Petrified Wood Handle - Silvertip Badger Brush",
+                        Description = "This natural fiber is most prized by shaving aficionados as it has good backbone and water retention to help you whip up a fabulous lather. And silvertip hair is some of the best. These hairs are the highest quality badger- soft to the touch with a great face feel. The 24mm knot is a lather monster with a densely-packed large head to produce your lubricant. And we've set the knot deep in the handle for durability and comfort.",
+                        ImageUrl = "https://www.shavershop.com/shop/images/th2_9904_whst.jpg",
+                        Price = 65.00m,
+                        CategoryId = 2
+                    },
+                    new Product
+                    {
+                        Id = 12,
+                        Title = "Parker Blue Wood Handle – Boar Bristle Brush",
+                        Description = "This brush is loaded with Parker's banded pure boar bristles. Boar is known for its stiffness - great for those seeking exfoliation and the \"scritchy\" feeling on your face. It is also an effective latherer, whipping up mounds of white froth. It is great on creams or soaps. This brush will soften over time to give you softer bristles - rather like wearing in a nice pair of leather shoes.",
+                        ImageUrl = "https://www.shavershop.com/shop/images/th2_9937_blbo.jpg",
+                        Price = 17.00m,
+                        CategoryId = 2
+                    },
+                    new Product
+                    {
+                        Id = 13,
+                        Title = "Parker Rosewood Handle - Boar Bristle Brush",
+                        Description = "Parker is well known for their boar brushes and this is one of the finest on the market. The bristle and handle are the top of Parker's product line and sure to exceed your expectations. The handle is a very functional, fitting well within a variety of hand sizes and give the brush a little extra length to avoid lather on your fingers.",
+                        ImageUrl = "https://www.shavershop.com/shop/images/th2_9939_rwbo.jpg",
+                        Price = 17.00m,
+                        CategoryId = 2
+                    },
+                    new Product
+                    {
+                        Id = 14,
+                        Title = "Parker Chrome Handle - Pure Badger Brush",
+                        Description = "This brush is one of the heaviest ones we have ever handled. The unique chrome handle has a very solid, weighty feel to it and is quite cool to the touch. The distinctly soft and dense bristles lofted together create a luxurious lather that you are sure to enjoy.",
+                        ImageUrl = "https://www.shavershop.com/shop/images/th2_9938_chpb.jpg",
+                        Price = 42.00m,
+                        CategoryId = 2
+                    },
+                    new Product
+                    {
+                        Id = 15,
+                        Title = "Taylor Sandalwood Shaving Cream",
+                        Description = "Taylor of Old Bond Street Sandalwood Shaving Cream - Tub. In the traditional method, the cream is placed on the brush or on the palm and then applied to the face, where the brush is used to work up a lather.  However, most today prefer to use a lather \"bowl\".  Whichever method you chose, you'll be amazed how well theses creams prepare your beard and moisturize your face. From the mystic east, we take a complex rich woody blend of exotic sweet scented Sandalwood and Cedar, add Lavender and Rosemary with subtle floral and Jasmine and Rose, for a vivacious, enticing, confidently masculine bouquet ",
+                        ImageUrl = "https://www.shavershop.com/shop/images/th2_3400_sandlewood.jpg",
+                        Price = 19.98m,
+                        CategoryId = 3
+                    },
+                    new Product
+                    {
+                        Id = 16,
+                        Title = "C. Conk Amber Super Bar Shave Soap",
+                        Description = "This shaving soap is a glycerin-based one and it uses avocado oil and Tocopherol Acetate to provide great lubrication and conditioning. This manufacturer makes the same thing in a lot of different shaving soap varieties, so it's well worth it to take a look at what they have if you like how this performs. Amber is a timeless scent, combining a very relaxed, refined sort of character with a fresh outdoorsy element, as well. It's warm and fresh at the same time and anybody who gets close enough to get a whiff of it is going to know that you're a distinguished fellow.",
+                        ImageUrl = "https://www.shavershop.com/shop/images/th2_4227_123.jpg",
+                        Price = 5.90m,
+                        CategoryId = 3
+                    },
+                    new Product
+                    {
+                        Id = 17,
+                        Title = "Trumper Almond Hard Shaving Soap",
+                        Description = "Trumper Almond Hard Soap in Wooden Bowl. Supplied in a hand-turned wooden bowl, this fine quality Almond Hard Shaving Soap is specially formulated using essential oils to give a smooth shave leaving the skin soft.",
+                        ImageUrl = "https://www.shavershop.com/shop/images/th2_7704.jpg",
+                        Price = 36.00m,
+                        CategoryId = 3
+                    },
+                    new Product
+                    {
+                        Id = 18,
+                        Title = "C. Conk Santa Fe Cedar Shave Cream",
+                        Description = "Santa Fe Cedar - Robust Cedar and Rosemary. Rich, silky and luxurious shave cream, a great alternative to our new natural shave soap. Provides a premium shave and leaves skin feeling nourished and refreshed. Made with natural ingredients, scented by exclusive blends of essential oils. 5.5oz.",
+                        ImageUrl = "https://www.shavershop.com/shop/images/th2_1311-4331-c.jpg",
+                        Price = 16.00m,
+                        CategoryId = 3
+                    },
+                    new Product
+                    {
+                        Id = 19,
+                        Title = "Clubman After Shave Lotion",
+                        Description = "Bursting with top notes of orange, bergamot and mouth-watering lemon with green nuances throughout. The floral heart of jasmine, orange flower and geranium dance with lavender and is completed with a warm musk background.",
+                        ImageUrl = "https://www.shavershop.com/shop/images/th2_6456_aftershave_700.jpg",
+                        Price = 8.95m,
+                        CategoryId = 4
+                    },
+                    new Product
+                    {
+                        Id = 20,
+                        Title = "C. Conk Bay Rum Aftershave Cologne",
+                        Description = "This bay rum aftershave comes in a 4-ounce bottle and that will give you plenty to use. Just as the name says, the scent of this is evocative of a tropical island, with bay leaves and Jamaican rum used as the primary fragrance ingredients. This is very high quality, and you will smell really good. This is one of those aromas that, for some guys, fits them in a way that nothing else can. It's also a classic, so most people appreciate it.This will tone your skin, close up your pores and help you avoid getting razor rash and other issues after you shave and its scent will last a little longer than a typical aftershave.",
+                        ImageUrl = "https://www.shavershop.com/shop/images/th2_4253_conk_144.jpg",
+                        Price = 19.50m,
+                        CategoryId = 4
+                    },
+                    new Product
+                    {
+                        Id = 21,
+                        Title = "Trumper Skye Aftershave",
+                        Description = "Trumper's Aftershave comes in a frosted glass bottle with our crown stopper. Ylang ylang, geranium bourbon, neroli, rosmary, and a hint of musk are just five of the eleven essences that give the Skye Aftershave its distinctive bouquet.",
+                        ImageUrl = "https://www.shavershop.com/shop/images/th2_7726.jpg",
+                        Price = 55.00m,
+                        CategoryId = 4
                     }
                 );
         }
