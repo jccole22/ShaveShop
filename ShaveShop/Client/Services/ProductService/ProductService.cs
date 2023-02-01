@@ -7,6 +7,8 @@ namespace ShaveShop.Client.Services.ProductService
     {
         private readonly HttpClient _http;
 
+        public event Action ProductsChanged;
+
         public ProductService(HttpClient http)
         {
             _http = http;
@@ -15,13 +17,25 @@ namespace ShaveShop.Client.Services.ProductService
         public List<Product> Products { get; set; } = new List<Product>();
         public Product Product { get; set; } = new Product();
 
-        public async Task GetProducts()
+
+        public async Task GetProducts(string? categoryUrl = null)
         {
-            var result = await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>("api/product");
+            ServiceResponse<List<Product>>? result = null;
+            if (categoryUrl == null)
+            {
+                result = await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>("api/product");
+            } 
+            else
+            {
+                result = await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>($"api/product/category/{categoryUrl}");
+            }
+
             if (result != null && result.Data != null)
             {
                 Products = result.Data;
             }
+
+            ProductsChanged.Invoke();
         }
 
         public async Task<ServiceResponse<Product>> GetProduct(int productId)

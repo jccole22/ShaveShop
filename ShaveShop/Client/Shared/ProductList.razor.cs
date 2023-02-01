@@ -2,17 +2,24 @@
 using ShaveShop.Client.Services.ProductService;
 using ShaveShop.Shared;
 
+
 namespace ShaveShop.Client.Shared
 {
-    public class ProductListBase : ComponentBase
+    public class ProductListBase : ComponentBase, IDisposable
     {
         [Inject]
-        protected IProductService ProductService { get; set; } 
+        protected IProductService ProductService { get; set; }
+        
 
-        protected override async Task OnInitializedAsync()
+        protected override void OnInitialized()
         {
-            await ProductService.GetProducts();
+            ProductService.ProductsChanged += StateHasChanged;
            
+        }
+
+        public void Dispose()
+        {
+            ProductService.ProductsChanged -= StateHasChanged;
         }
     }
 }
