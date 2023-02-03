@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace ShaveShop.Shared
 {
@@ -17,6 +13,8 @@ namespace ShaveShop.Shared
         public decimal Price { get; set; }
         public Category? Category { get; set; }
         public int CategoryId { get; set; }
+        public SubCategory? SubCategory { get; set; }
+        public int SubCategoryId { get; set; }
 
     }
 }
