@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using ShaveShop.Server.Data;
 using ShaveShop.Server.Services.ProductService;
 using ShaveShop.Server.Services.CategoryService;
+using ShaveShop.Server.Services.SubCategoryService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ISubCategoryService, SubCategoryService>();
 
 var app = builder.Build();
 
