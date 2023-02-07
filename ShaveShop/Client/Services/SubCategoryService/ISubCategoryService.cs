@@ -1,6 +1,10 @@
-﻿namespace ShaveShop.Client.Services.SubCategoryService
+﻿using ShaveShop.Shared;
+
+namespace ShaveShop.Client.Services.SubCategoryService
 {
-    public class ISubCategoryService
+    public interface ISubCategoryService
     {
+        List<SubCategory> SubCategories { get; set; }
+        Task GetSubCategories();
     }
 }
