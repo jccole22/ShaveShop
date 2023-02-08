@@ -1,5 +1,7 @@
 ﻿@using Services.CategoryService
+@using Services.SubCategoryService
 @inject ICategoryService CategoryService
+@inject ISubCategoryService SubCategoryService
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
@@ -22,6 +24,14 @@
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="@category.Url">
                      @category.Name
+                </NavLink>
+            </div>
+        }
+        @foreach (var subcategory in SubCategoryService.SubCategories)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="@subcategory.Url">
+                    @subcategory.Name
                 </NavLink>
             </div>
         }
@@ -53,6 +63,6 @@
     protected override async Task OnInitializedAsync()
     {
         await CategoryService.GetCategories();
-
+        await SubCategoryService.GetSubCategories();
     }
 }
