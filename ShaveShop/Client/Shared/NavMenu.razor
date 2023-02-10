@@ -12,29 +12,104 @@
     </div>
 </div>
 
+
+
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <nav class="flex-column">
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All" @onclick="()=>SubSelection(-1)">
                  Home
             </NavLink>
         </div>
-        @foreach(var category in CategoryService.Categories)
-        {
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="@category.Url">
-                     @category.Name
-                </NavLink>
-            </div>
-        }
-        @foreach (var subcategory in SubCategoryService.SubCategories)
-        {
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="@subcategory.Url">
-                    @subcategory.Name
-                </NavLink>
-            </div>
-        }
+
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="@CategoryService.Categories[0].Url" @onclick="()=>SubSelection(0)">
+                @CategoryService.Categories[0].Name
+            </NavLink>
+            @if (expandRazors)
+            {
+                <ul class="nav flex-column">
+                    <li class="nav-item px-2 py-1">
+                        <NavLink class="nav-link" href="">
+                            @SubCategoryService.SubCategories[0].Name
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-2">
+                        <NavLink class="nav-link" href="">
+                            @SubCategoryService.SubCategories[1].Name
+                        </NavLink>
+                    </li>
+                </ul>
+            }
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="@CategoryService.Categories[1].Url" @onclick="()=>SubSelection(1)">
+                @CategoryService.Categories[1].Name
+            </NavLink>
+            @if (expandBrushes)
+            {
+                <ul class="nav flex-column">
+                    <li class="nav-item px-2 py-1">
+                        <NavLink class="nav-link" href="">
+                            @SubCategoryService.SubCategories[2].Name
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-2">
+                        <NavLink class="nav-link" href="">
+                            @SubCategoryService.SubCategories[3].Name
+                        </NavLink>
+                    </li>
+                </ul>
+            }
+
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="@CategoryService.Categories[2].Url" @onclick="()=>SubSelection(2)">
+                @CategoryService.Categories[2].Name
+            </NavLink>
+            @if (expandCreamSoap)
+            {
+                <ul class="nav flex-column">
+                    <li class="nav-item px-2 py-1">
+                        <NavLink class="nav-link" href="">
+                            @SubCategoryService.SubCategories[4].Name
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-2">
+                        <NavLink class="nav-link" href="">
+                            @SubCategoryService.SubCategories[5].Name
+                        </NavLink>
+                    </li>
+                </ul>
+            }
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="@CategoryService.Categories[3].Url" @onclick="()=>SubSelection(3)">
+                @CategoryService.Categories[3].Name
+            </NavLink>
+            @if (expandAfterShaves)
+            {
+                <ul class="nav flex-column">
+                    <li class="nav-item px-2 py-1">
+                        <NavLink class="nav-link" href="">
+                            @SubCategoryService.SubCategories[6].Name
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-2">
+                        <NavLink class="nav-link" href="">
+                            @SubCategoryService.SubCategories[7].Name
+                        </NavLink>
+                    </li>
+                </ul>  
+            }
+        </div>
+    
+       
+
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="shaveoftheday">
                  Shave of the day
@@ -52,6 +127,11 @@
 
 @code {
     private bool collapseNavMenu = true;
+    private bool expandRazors;
+    private bool expandBrushes;
+    private bool expandCreamSoap;
+    private bool expandAfterShaves;
+
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
@@ -64,5 +144,44 @@
     {
         await CategoryService.GetCategories();
         await SubCategoryService.GetSubCategories();
+    }
+
+    private void SubSelection(int choice)
+    {
+        if (choice == 0)
+        {
+            expandRazors = true;
+            expandBrushes = false;
+            expandCreamSoap = false;
+            expandAfterShaves = false;
+        }
+        else if (choice == 1)
+        {
+            expandRazors = false;
+            expandBrushes = true;
+            expandCreamSoap = false;
+            expandAfterShaves = false;
+        }
+        else if (choice == 2)
+        {
+            expandRazors = false;
+            expandBrushes = false;
+            expandCreamSoap = true;
+            expandAfterShaves = false;
+        }
+        else if (choice == 3)
+        {
+            expandRazors = false;
+            expandBrushes = false;
+            expandCreamSoap = false;
+            expandAfterShaves = true;
+        }
+        else
+        {
+            expandRazors = false;
+            expandBrushes = false;
+            expandCreamSoap = false;
+            expandAfterShaves = false;
+        }
     }
 }
