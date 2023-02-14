@@ -17,14 +17,14 @@
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <nav class="flex-column">
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All" @onclick="()=>SubSelection(-1)">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All" @onmouseover="()=>SubSelection(-1)" @onclick="()=>SubSelection(-1)">
                  Home
             </NavLink>
         </div>
 
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="@CategoryService.Categories[0].Url" @onclick="()=>SubSelection(0)">
+            <NavLink class="nav-link" href="@CategoryService.Categories[0].Url" @onmouseover="()=>SubSelection(0)" @onclick="()=>SubSelection(-1)">
                 @CategoryService.Categories[0].Name
             </NavLink>
             @if (expandRazors)
@@ -45,7 +45,7 @@
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="@CategoryService.Categories[1].Url" @onclick="()=>SubSelection(1)">
+            <NavLink class="nav-link" href="@CategoryService.Categories[1].Url" @onmouseover="()=>SubSelection(1)" @onclick="()=>SubSelection(-1)">
                 @CategoryService.Categories[1].Name
             </NavLink>
             @if (expandBrushes)
@@ -67,7 +67,7 @@
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="@CategoryService.Categories[2].Url" @onclick="()=>SubSelection(2)">
+            <NavLink class="nav-link" href="@CategoryService.Categories[2].Url" @onmouseover="()=>SubSelection(2)" @onclick="()=>SubSelection(-1)">
                 @CategoryService.Categories[2].Name
             </NavLink>
             @if (expandCreamSoap)
@@ -88,7 +88,7 @@
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="@CategoryService.Categories[3].Url" @onclick="()=>SubSelection(3)">
+            <NavLink class="nav-link" href="@CategoryService.Categories[3].Url" @onmouseover="()=>SubSelection(3)" @onclick="()=>SubSelection(-1)">
                 @CategoryService.Categories[3].Name
             </NavLink>
             @if (expandAfterShaves)
@@ -144,7 +144,8 @@
     {
         if (choice == 0)
         {
-            expandRazors = expandRazors == true ? false : true;
+            //expandRazors = expandRazors == true ? false : true;
+            expandRazors = true;
             expandBrushes = false;
             expandCreamSoap = false;
             expandAfterShaves = false;
@@ -152,7 +153,8 @@
         else if (choice == 1)
         {
             expandRazors = false;
-            expandBrushes = expandBrushes == true ? false : true;
+            //expandBrushes = expandBrushes == true ? false : true;
+            expandBrushes = true;
             expandCreamSoap = false;
             expandAfterShaves = false;
         }
@@ -160,7 +162,8 @@
         {
             expandRazors = false;
             expandBrushes = false;
-            expandCreamSoap = expandCreamSoap == true ? false : true;
+            //expandCreamSoap = expandCreamSoap == true ? false : true;
+            expandCreamSoap = true;
             expandAfterShaves = false;
         }
         else if (choice == 3)
@@ -168,7 +171,8 @@
             expandRazors = false;
             expandBrushes = false;
             expandCreamSoap = false;
-            expandAfterShaves = expandAfterShaves == true ? false : true;
+            //expandAfterShaves = expandAfterShaves == true ? false : true;
+            expandAfterShaves = true;
         }
         else
         {
