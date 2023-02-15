@@ -18,16 +18,20 @@ namespace ShaveShop.Client.Services.ProductService
         public Product Product { get; set; } = new Product();
 
 
-        public async Task GetProducts(string? categoryUrl = null)
+        public async Task GetProducts(string? categoryUrl = null, string? subcategoryUrl = null)
         {
             ServiceResponse<List<Product>>? result = null;
-            if (categoryUrl == null)
+            if (categoryUrl == null && subcategoryUrl == null)
             {
                 result = await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>("api/product");
             } 
-            else
+            else if (categoryUrl != null && subcategoryUrl == null)
             {
                 result = await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>($"api/product/category/{categoryUrl}");
+            }
+            else
+            {
+                result = await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>($"api/product/subcategory/{subcategoryUrl}");
             }
 
             if (result != null && result.Data != null)

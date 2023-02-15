@@ -41,6 +41,13 @@ namespace ShaveShop.Server.Controllers
             return Ok(result);
         }
 
+        [HttpGet("subcategory/{subcategoryUrl}")]
+        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProductsBySubCategory(string subcategoryUrl)
+        {
+            var result = await _productService.GetProductsBySubCategoryAsync(subcategoryUrl);
+            return Ok(result);
+        }
+
         //[HttpGet]
         //[Route("/api/string")]
         //public async Task<IActionResult> GetString()

@@ -1,5 +1,6 @@
 ﻿@page "/"
 @page "/{categoryUrl}"
+@page "/subcategory/{subcategoryUrl}"
 @using Services.ProductService
 @inject IProductService ProductService
 
@@ -10,10 +11,19 @@
 @code {
     [Parameter]
     public string? CategoryUrl { get; set; } = null;
+    [Parameter]
+    public string? SubCategoryUrl { get; set; } = null;
 
     protected override async Task OnParametersSetAsync()
     {
-        await ProductService.GetProducts(CategoryUrl);
+        if (SubCategoryUrl != null)
+        {
+            await ProductService.GetProducts(subcategoryUrl: SubCategoryUrl);
+        }
+        else
+        {
+            await ProductService.GetProducts(categoryUrl: CategoryUrl);
+        }
     }
 
     
