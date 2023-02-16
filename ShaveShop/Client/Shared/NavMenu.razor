@@ -31,12 +31,12 @@
             {
                 <ul class="nav flex-column">
                     <li class="nav-item px-2 py-1">
-                        <NavLink class="nav-link" href=@UrlMaker(SubCategoryService.SubCategories[0].Url)>
+                        <NavLink class="nav-link" href=@UrlMaker("subcategory/",SubCategoryService.SubCategories[0].Url)>
                             @SubCategoryService.SubCategories[0].Name
                         </NavLink>
                     </li>
                     <li class="nav-item px-2">
-                        <NavLink class="nav-link" href=@UrlMaker(SubCategoryService.SubCategories[1].Url)>
+                        <NavLink class="nav-link" href=@UrlMaker("subcategory/",SubCategoryService.SubCategories[1].Url)>
                             @SubCategoryService.SubCategories[1].Name
                         </NavLink>
                     </li>
@@ -52,12 +52,12 @@
             {
                 <ul class="nav flex-column">
                     <li class="nav-item px-2 py-1">
-                        <NavLink class="nav-link" href=@UrlMaker(SubCategoryService.SubCategories[2].Url)>
+                        <NavLink class="nav-link" href=@UrlMaker("subcategory/",SubCategoryService.SubCategories[2].Url)>
                             @SubCategoryService.SubCategories[2].Name
                         </NavLink>
                     </li>
                     <li class="nav-item px-2">
-                        <NavLink class="nav-link" href=@UrlMaker(SubCategoryService.SubCategories[3].Url)>
+                        <NavLink class="nav-link" href=@UrlMaker("subcategory/",SubCategoryService.SubCategories[3].Url)>
                             @SubCategoryService.SubCategories[3].Name
                         </NavLink>
                     </li>
@@ -74,12 +74,12 @@
             {
                 <ul class="nav flex-column">
                     <li class="nav-item px-2 py-1">
-                        <NavLink class="nav-link" href=@UrlMaker(SubCategoryService.SubCategories[4].Url)>
+                        <NavLink class="nav-link" href=@UrlMaker("subcategory/",SubCategoryService.SubCategories[4].Url)>
                             @SubCategoryService.SubCategories[4].Name
                         </NavLink>
                     </li>
                     <li class="nav-item px-2">
-                        <NavLink class="nav-link" href=@UrlMaker(@SubCategoryService.SubCategories[5].Url)>
+                        <NavLink class="nav-link" href=@UrlMaker("subcategory/",@SubCategoryService.SubCategories[5].Url)>
                             @SubCategoryService.SubCategories[5].Name
                         </NavLink>
                     </li>
@@ -95,12 +95,12 @@
             {
                 <ul class="nav flex-column">
                     <li class="nav-item px-2 py-1">
-                        <NavLink class="nav-link" href=@UrlMaker(SubCategoryService.SubCategories[6].Url)>
+                        <NavLink class="nav-link" href=@UrlMaker("subcategory/",SubCategoryService.SubCategories[6].Url)>
                             @SubCategoryService.SubCategories[6].Name
                         </NavLink>
                     </li>
                     <li class="nav-item px-2">
-                        <NavLink class="nav-link" href=@UrlMaker(SubCategoryService.SubCategories[7].Url)>
+                        <NavLink class="nav-link" href=@UrlMaker("subcategory/",SubCategoryService.SubCategories[7].Url)>
                             @SubCategoryService.SubCategories[7].Name
                         </NavLink>
                     </li>
@@ -126,8 +126,6 @@
     private bool expandCreamSoap;
     private bool expandAfterShaves;
 
-    private string sub = "subcategory/";
-
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
@@ -142,9 +140,9 @@
         await SubCategoryService.GetSubCategories();
     }
 
-    private string UrlMaker(string url)
+    private string UrlMaker(string prefix, string url)
     {
-        return "subcategory/" + url;
+        return prefix + url;
     }
 
     private void SubSelection(int choice)
